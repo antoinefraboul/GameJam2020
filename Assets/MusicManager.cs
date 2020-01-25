@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    AudioSource lightMusic;
-    AudioSource shadowMusic;
-    AudioSource stressMusic;
-    public float stressTime;
+    public AudioSource lightMusic;
+    public AudioSource shadowMusic;
+    public AudioSource stressMusic;
 
     private float stress;
     // Start is called before the first frame update
     void Start()
     {
-        
+        lightMusic.volume = 0;
+        shadowMusic.volume = 1;
+        stressMusic.volume = 0;
+        lightMusic.Play();
+        shadowMusic.Play();
     }
 
     // Update is called once per frame
@@ -21,16 +24,14 @@ public class MusicManager : MonoBehaviour
     {
         if (stress > 0)
         {
-            lightMusic.volume = Mathf.Lerp(0,1, stress);
-            shadowMusic.volume = Mathf.Lerp(1,0, stress);
-            stressMusic.volume = Mathf.Lerp(1,0, stress/stressTime);
+            stressMusic.volume = Mathf.Lerp(1,0, stress);
+            lightMusic.volume = 1;
         }
         
         else
         {
-            lightMusic.volume = Mathf.Lerp(1,0, stress);
-            shadowMusic.volume = Mathf.Lerp(0,1, stress);
-            stressMusic.volume = Mathf.Lerp(0,1, stress/stressTime);
+            stressMusic.volume = Mathf.Lerp(0,1, stress);
+            lightMusic.volume = 0;
         }
     }
 

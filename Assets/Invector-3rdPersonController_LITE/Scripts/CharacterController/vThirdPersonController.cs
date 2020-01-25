@@ -101,6 +101,7 @@ namespace Invector.vCharacterController
                     isSprinting = false;
                 }
             }
+            
             else if (isSprinting)
             {
                 isSprinting = false;

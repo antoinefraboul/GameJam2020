@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using Invector.vCharacterController;
 
 public class LightManager : MonoBehaviour
 {
-
-    public GameObject[] lights;
-    public List<Collider> colliders;
+    public vThirdPersonController controller;
     public PostProcessVolume postProcessVolume;
     public MusicManager musicManager;
     public PlayerManager playerManager;
@@ -20,6 +19,8 @@ public class LightManager : MonoBehaviour
     public float bloomMin = 5f;
 
     private Bloom bloomLayer;
+    public GameObject[] lights;
+    public List<Collider> colliders;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +62,7 @@ public class LightManager : MonoBehaviour
 
         bloomLayer.intensity.value = Mathf.Lerp(bloomMin, bloomMax, currentTime / lightTime);
         musicManager.SetStress(currentTime / lightTime);
+        controller.moveSpeed = Mathf.Lerp(2.0f,0.4f, currentTime / lightTime ); 
     }
 
     public void isInShadow(bool shadow)
