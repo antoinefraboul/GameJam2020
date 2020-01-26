@@ -21,7 +21,6 @@ public class Light_Clipping_Manager : MonoBehaviour
         {
             m_time = 0;
             light.SetActive(!(light.activeInHierarchy));
-            Debug.Log("Active in Hierarchy" + gameObject.activeInHierarchy);
         }
     }
 }

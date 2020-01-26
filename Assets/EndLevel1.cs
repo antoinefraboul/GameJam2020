@@ -3,16 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-public class PlayerManager : MonoBehaviour
+public class EndLevel1 : MonoBehaviour
 {
-    public GameObject player;
-    
-    
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
+        
     }
 
     // Update is called once per frame
@@ -21,9 +17,8 @@ public class PlayerManager : MonoBehaviour
         
     }
 
-    public void GameOver()
+    void OnTriggerEnter()
     {
-        int index = SceneManager.GetActiveScene().buildIndex;
-        gameObject.GetComponent<SceneLoader>().ChangeScene(index);
+        SceneManager.LoadScene("Transition_Level1_2");
     }
 }

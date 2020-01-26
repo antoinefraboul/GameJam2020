@@ -7,6 +7,8 @@ public class LightControl : MonoBehaviour
     public List<GameObject> m_lights;
     bool invert;
 
+    public GameObject UI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,5 +34,16 @@ public class LightControl : MonoBehaviour
         {
             invert = true;
         }
+
+
+    }
+    private void OnTriggerExit()
+    {
+        UI.SetActive(false);
+    }
+
+    private void OnTriggerEnter()
+    {
+        UI.SetActive(true);
     }
 }
