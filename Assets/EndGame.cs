@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerManager : MonoBehaviour
+public class EndGame : MonoBehaviour
 {
-    public DeathManager deathManager;
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
+        
     }
 
     // Update is called once per frame
@@ -18,8 +17,8 @@ public class PlayerManager : MonoBehaviour
         
     }
 
-    public void GameOver()
+    void OnTriggerEnter()
     {
-        deathManager.enabled = true;
+        SceneManager.LoadScene(4);
     }
 }

@@ -3,10 +3,10 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 
-
 public class Patrol : MonoBehaviour
 {
-
+    public PlayerManager playerManager;
+    public GameObject player;
     public Transform[] points;
     private int destPoint = 0;
     private NavMeshAgent agent;
@@ -46,5 +46,11 @@ public class Patrol : MonoBehaviour
         // close to the current one.
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
             GotoNextPoint();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject == player)
+        playerManager.GameOver();
     }
 }

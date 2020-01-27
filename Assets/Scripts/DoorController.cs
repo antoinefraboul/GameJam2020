@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
+    public GameObject UI;
     public GameObject Door;
     bool doorOpen;
     bool doorOpenning;
@@ -36,9 +37,20 @@ public class DoorController : MonoBehaviour
 
     private void OnTriggerStay()
     {
-        if (Input.GetButton("Interaction1"))
+        if (Input.GetButtonDown("Interaction1"))
         {
             doorOpen = true;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        UI.SetActive(true);
+    }
+
+    private void OnTriggerExit()
+    {
+        UI.SetActive(false);
     }
 }

@@ -577,6 +577,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2931641112075715667, guid: 5bcfd8486b5446141af460be5d8ff771,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1527159457}
+    - target: {fileID: 2931641112075715667, guid: 5bcfd8486b5446141af460be5d8ff771,
+        type: 3}
+      propertyPath: postProcessVolume
+      value: 
+      objectReference: {fileID: 1111575870}
     - target: {fileID: 6264683102776331880, guid: 5bcfd8486b5446141af460be5d8ff771,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -647,13 +657,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6264683102776331884, guid: 5bcfd8486b5446141af460be5d8ff771,
+        type: 3}
+      propertyPath: Intro
+      value: 
+      objectReference: {fileID: 1502777742}
     - target: {fileID: 6264683102776331886, guid: 5bcfd8486b5446141af460be5d8ff771,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6264683102776331886, guid: 5bcfd8486b5446141af460be5d8ff771,
+        type: 3}
+      propertyPath: deathManager
+      value: 
+      objectReference: {fileID: 125062784}
+    - target: {fileID: 7777970455460719326, guid: 5bcfd8486b5446141af460be5d8ff771,
+        type: 3}
+      propertyPath: m_text
+      value: Game Over
+      objectReference: {fileID: 0}
+    - target: {fileID: 7777970455460719326, guid: 5bcfd8486b5446141af460be5d8ff771,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647933604676677946, guid: 5bcfd8486b5446141af460be5d8ff771,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b86785f9b6440447b59d0f0d9bf0ddf, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bcfd8486b5446141af460be5d8ff771, type: 3}
+--- !u!114 &125062784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2931641112075715667, guid: 5bcfd8486b5446141af460be5d8ff771,
+    type: 3}
+  m_PrefabInstance: {fileID: 125062783}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d1200c846edc142b6f39302207e315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &139183410
 GameObject:
   m_ObjectHideFlags: 0
@@ -13622,7 +13669,7 @@ GameObject:
   - component: {fileID: 730135988}
   m_Layer: 0
   m_Name: IA1
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13635,12 +13682,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730135985}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.23
-  m_Height: 1.56
+  m_Radius: 0.6
+  m_Height: 2.58
   m_Direction: 1
-  m_Center: {x: 0, y: 0.78, z: 0}
+  m_Center: {x: 0, y: 0.87, z: 0}
 --- !u!54 &730135987
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13669,6 +13716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17d2e6e866919904cb4fd9c6eb4194dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerManager: {fileID: 828508405}
+  player: {fileID: 1125329072}
   points:
   - {fileID: 766055018}
   - {fileID: 816408421}
@@ -14162,13 +14211,25 @@ Transform:
   m_Father: {fileID: 1436864898}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &828508405 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6264683102776331886, guid: 5bcfd8486b5446141af460be5d8ff771,
+    type: 3}
+  m_PrefabInstance: {fileID: 125062783}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30143a85baf09134faf45c6550a7f8bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &829835574 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1726085195227897883, guid: 450d87a5c6ee8a3409333f8b3da461a4,
     type: 3}
   m_PrefabInstance: {fileID: 1527159456}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1125329072}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73fbf3aa05f6be24780438449f505aa3, type: 3}
@@ -14973,6 +15034,12 @@ Transform:
   m_Father: {fileID: 1184099409}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1125329072 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1726085195227897887, guid: 450d87a5c6ee8a3409333f8b3da461a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1527159456}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1142247020
 GameObject:
   m_ObjectHideFlags: 0
@@ -16352,6 +16419,12 @@ Transform:
   m_Father: {fileID: 1954015367}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1502777742 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7908275555029277466, guid: 5bcfd8486b5446141af460be5d8ff771,
+    type: 3}
+  m_PrefabInstance: {fileID: 125062783}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1510741377
 GameObject:
   m_ObjectHideFlags: 0
@@ -16445,6 +16518,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1726085195227897886, guid: 450d87a5c6ee8a3409333f8b3da461a4,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1726085195227897887, guid: 450d87a5c6ee8a3409333f8b3da461a4,
         type: 3}
       propertyPath: m_Name
@@ -16452,6 +16530,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 450d87a5c6ee8a3409333f8b3da461a4, type: 3}
+--- !u!114 &1527159457 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1726085195227897884, guid: 450d87a5c6ee8a3409333f8b3da461a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1527159456}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125329072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5deb9ff5611cb9d4596d397ac57ee8c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1532062146
 GameObject:
   m_ObjectHideFlags: 0
@@ -16843,7 +16933,7 @@ GameObject:
   - component: {fileID: 1686203186}
   m_Layer: 0
   m_Name: IA3
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16860,6 +16950,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17d2e6e866919904cb4fd9c6eb4194dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerManager: {fileID: 828508405}
+  player: {fileID: 1125329072}
   points:
   - {fileID: 770995250}
   - {fileID: 169683084}
@@ -16895,12 +16987,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686203185}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.23
-  m_Height: 1.56
+  m_Radius: 0.6
+  m_Height: 2.58
   m_Direction: 1
-  m_Center: {x: 0, y: 0.78, z: 0}
+  m_Center: {x: 0, y: 0.87, z: 0}
 --- !u!54 &1686203189
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18646,7 +18738,7 @@ GameObject:
   - component: {fileID: 2007181886}
   m_Layer: 0
   m_Name: IA2
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18659,12 +18751,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007181883}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.23
-  m_Height: 1.56
+  m_Radius: 0.6
+  m_Height: 2.58
   m_Direction: 1
-  m_Center: {x: 0, y: 0.78, z: 0}
+  m_Center: {x: 0, y: 0.87, z: 0}
 --- !u!54 &2007181885
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18693,6 +18785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17d2e6e866919904cb4fd9c6eb4194dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerManager: {fileID: 828508405}
+  player: {fileID: 1125329072}
   points:
   - {fileID: 189611572}
   - {fileID: 1692327888}

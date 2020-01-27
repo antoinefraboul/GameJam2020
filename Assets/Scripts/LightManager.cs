@@ -19,6 +19,7 @@ public class LightManager : MonoBehaviour
     public float bloomMin = 5f;
 
     private Bloom bloomLayer;
+    private ChromaticAberration chromaticAberration;
     public GameObject[] lights;
     public List<Collider> colliders;
     // Start is called before the first frame update
@@ -27,7 +28,9 @@ public class LightManager : MonoBehaviour
         currentTime = 0;
         inShadow = false;
         bloomLayer = null;
+        chromaticAberration = null;
         postProcessVolume.profile.TryGetSettings(out bloomLayer);
+        postProcessVolume.profile.TryGetSettings(out chromaticAberration);
 
         lights = GameObject.FindGameObjectsWithTag("Light");
 
@@ -61,6 +64,7 @@ public class LightManager : MonoBehaviour
         }
 
         bloomLayer.intensity.value = Mathf.Lerp(bloomMin, bloomMax, currentTime / lightTime);
+        chromaticAberration.intensity.value = Mathf.Lerp(0, 1, currentTime / lightTime);
         musicManager.SetStress(currentTime / lightTime);
         controller.moveSpeed = Mathf.Lerp(2.0f,0.4f, currentTime / lightTime ); 
     }
